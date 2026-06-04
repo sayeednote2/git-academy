@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Particles } from "@/components/ui/Particles";
 
 const features = [
   "Custom curriculum tailored to your technology stack",
@@ -15,13 +16,16 @@ export function CorporateSection() {
     <section className="py-24 lg:py-32">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
         <motion.div
-          className="bg-[#18181B] rounded-2xl p-8 lg:p-12 border border-[rgba(255,255,255,0.06)]"
+          className="bg-[#18181B] rounded-2xl p-8 lg:p-12 border border-[rgba(255,255,255,0.06)] relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
+          <div className="absolute inset-0 z-0">
+            <Particles quantity={80} staticity={30} color="#3B82F6" />
+          </div>
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 relative z-10">
             {/* Left */}
             <div className="lg:col-span-5">
               <span className="text-xs uppercase tracking-[0.2em] text-[#71717A] font-medium">

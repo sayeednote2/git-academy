@@ -2,32 +2,25 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const words = ["YOUR", "MISSION", "STARTS", "HERE"];
+import { FlickeringGrid } from "@/components/ui/FlickeringGrid";
+import { WordFadeIn } from "@/components/ui/WordFadeIn";
 
 export function HeroSection() {
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 w-full">
+      <div className="absolute inset-0 z-0">
+        <FlickeringGrid color="#3B82F6" squareSize={4} gridGap={6} maxOpacity={0.15} />
+      </div>
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 w-full relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-0 items-center">
           {/* Left — Typography */}
           <div className="lg:col-span-7 relative z-10">
             <div className="flex flex-col">
-              {words.map((word, i) => (
-                <motion.span
-                  key={word}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: i * 0.1,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="text-[clamp(3.5rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.04em] text-white block"
-                >
-                  {word}
-                </motion.span>
-              ))}
+              <WordFadeIn 
+                words="YOUR MISSION STARTS HERE" 
+                className="text-[clamp(3.5rem,7vw,7rem)] font-black leading-[0.9] tracking-[-0.04em] text-white block"
+                delay={0.15} 
+              />
             </div>
 
             <motion.p

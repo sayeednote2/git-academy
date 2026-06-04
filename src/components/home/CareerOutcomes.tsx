@@ -3,11 +3,15 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { careerOutcomes } from "@/lib/data";
+import { Meteors } from "@/components/ui/Meteors";
 
 export function CareerOutcomes() {
   return (
-    <section className="py-24 lg:py-32">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+    <section className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Meteors number={20} />
+      </div>
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

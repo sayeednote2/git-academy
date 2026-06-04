@@ -4,13 +4,17 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { faqs } from "@/lib/data";
+import { Ripple } from "@/components/ui/Ripple";
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 lg:py-32 border-t border-[rgba(255,255,255,0.06)]">
-      <div className="max-w-[700px] mx-auto px-6 lg:px-12">
+    <section className="py-24 lg:py-32 border-t border-[rgba(255,255,255,0.06)] relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Ripple mainCircleOpacity={0.1} />
+      </div>
+      <div className="max-w-[700px] mx-auto px-6 lg:px-12 relative z-10">
         <motion.h2
           className="text-2xl font-bold text-white"
           initial={{ opacity: 0, y: 20 }}

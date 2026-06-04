@@ -2,11 +2,15 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Particles } from "@/components/ui/Particles";
 
 export function FinalCTA() {
   return (
-    <section className="py-32 lg:py-40">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center">
+    <section className="py-32 lg:py-40 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Particles quantity={150} staticity={40} color="#3B82F6" />
+      </div>
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

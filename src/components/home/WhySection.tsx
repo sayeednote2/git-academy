@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { RetroGrid } from "@/components/ui/RetroGrid";
 
 const stats = [
   { value: "2002", label: "Founded" },
@@ -11,8 +12,11 @@ const stats = [
 
 export function WhySection() {
   return (
-    <section className="py-24 lg:py-32">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+    <section className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <RetroGrid angle={65} className="opacity-40" />
+      </div>
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left — Story */}
           <motion.div

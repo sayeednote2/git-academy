@@ -3,6 +3,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { labEnvironments } from "@/lib/data";
+import { BorderBeam } from "@/components/ui/BorderBeam";
+import { DotPattern } from "@/components/ui/DotPattern";
 
 export function LabShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -49,8 +51,18 @@ export function LabShowcase() {
   };
 
   return (
-    <section className="py-24 lg:py-32">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+    <section className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <DotPattern
+          width={24}
+          height={24}
+          cx={1}
+          cy={1}
+          cr={1}
+          className="opacity-30 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
+        />
+      </div>
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,9 +85,11 @@ export function LabShowcase() {
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Terminal */}
-          <div className="lg:col-span-8 bg-[#18181B] rounded-xl lg:rounded-r-none border border-[rgba(255,255,255,0.06)] overflow-hidden">
-            {/* Title bar */}
-            <div className="h-10 bg-[#27272A] flex items-center justify-between px-4 border-b border-[rgba(255,255,255,0.06)]">
+          <div className="lg:col-span-8 relative rounded-xl lg:rounded-r-none p-[1px] overflow-hidden bg-[rgba(255,255,255,0.06)]">
+            <BorderBeam size={400} duration={12} colorFrom="#3B82F6" colorTo="transparent" />
+            <div className="bg-[#18181B] rounded-[11px] lg:rounded-r-none h-full w-full overflow-hidden relative z-10 flex flex-col">
+              {/* Title bar */}
+              <div className="h-10 bg-[#27272A] flex shrink-0 items-center justify-between px-4 border-b border-[rgba(255,255,255,0.06)]">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-[#EF4444]" />
                 <div className="w-3 h-3 rounded-full bg-[#EAB308]" />
@@ -97,6 +111,7 @@ export function LabShowcase() {
                 <span className="text-[#3B82F6] terminal-cursor">█</span>
               )}
             </div>
+          </div>
           </div>
 
           {/* Sidebar */}
