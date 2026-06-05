@@ -30,18 +30,24 @@ export function CareerOutcomes() {
           {careerOutcomes.map((outcome, i) => (
             <motion.div
               key={outcome.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
                 duration: 0.6,
-                delay: i * 0.1,
+                delay: i * 0.15,
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="grid md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-6 items-center"
             >
-              {/* Before */}
-              <div className="bg-[#18181B] rounded-xl p-6 border border-[rgba(255,255,255,0.06)] opacity-60">
+              {/* Before — slides in from left */}
+              <motion.div
+                initial={{ opacity: 0, x: -60 }}
+                whileInView={{ opacity: 0.6, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: i * 0.15 + 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-[#18181B] rounded-xl p-6 border border-[rgba(255,255,255,0.06)]"
+              >
                 <div className="text-sm text-[#71717A] mb-1">Before</div>
                 <div className="text-lg font-semibold text-[#A1A1AA]">
                   {outcome.name}
@@ -52,18 +58,30 @@ export function CareerOutcomes() {
                 <div className="text-sm text-[#52525B] mt-0.5">
                   {outcome.before.salary}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Arrow */}
-              <div className="flex justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.15 + 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="flex justify-center"
+              >
                 <div className="flex items-center gap-2 text-[#3B82F6]">
                   <div className="hidden md:block w-8 h-px bg-[#3B82F6]" />
                   <ArrowRight className="w-4 h-4" />
                 </div>
-              </div>
+              </motion.div>
 
-              {/* After */}
-              <div className="bg-[#18181B] rounded-xl p-6 border border-[rgba(255,255,255,0.06)] border-l-2 border-l-[#3B82F6]">
+              {/* After — slides in from right */}
+              <motion.div
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: i * 0.15 + 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-[#18181B] rounded-xl p-6 border border-[rgba(255,255,255,0.06)] border-l-2 border-l-[#3B82F6]"
+              >
                 <div className="text-sm text-[#3B82F6] mb-1">After</div>
                 <div className="text-lg font-semibold text-white">
                   {outcome.name}
@@ -87,7 +105,7 @@ export function CareerOutcomes() {
                 <div className="text-xs text-[#52525B] mt-3">
                   {outcome.program}
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { GSAPProvider } from "@/components/providers/GSAPProvider";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import "./globals.css";
 
 const inter = Inter({
@@ -60,10 +63,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="flex flex-col min-h-screen font-[family-name:var(--font-inter)] antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SmoothScroll>
+          <GSAPProvider>
+            <ScrollProgress />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </GSAPProvider>
+        </SmoothScroll>
       </body>
     </html>
   );
 }
+

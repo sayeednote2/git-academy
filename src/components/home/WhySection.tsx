@@ -1,14 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import { RetroGrid } from "@/components/ui/RetroGrid";
 
-const stats = [
-  { value: "2002", label: "Founded" },
-  { value: "95%", label: "Pass Rate" },
-  { value: "200+", label: "Programs" },
-  { value: "24/7", label: "Lab Access" },
+interface StatItem {
+  value: string;
+  numericValue: number;
+  suffix: string;
+  label: string;
+}
+
+const stats: StatItem[] = [
+  { value: "2002", numericValue: 2002, suffix: "", label: "Founded" },
+  { value: "95%", numericValue: 95, suffix: "%", label: "Pass Rate" },
+  { value: "200+", numericValue: 200, suffix: "+", label: "Programs" },
+  { value: "24/7", numericValue: 24, suffix: "/7", label: "Lab Access" },
 ];
+
+function AnimatedCounter({ stat }: { stat: StatItem }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const duration = 2000; // 2 seconds
+    const start = 0;
+    const end = stat.numericValue;
+    const startTime = Date.now();
+
+    const timer = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing: ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(start + (end - start) * eased));
+
+      if (progress >= 1) {
+        clearInterval(timer);
+        setCount(end);
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [isInView, stat.numericValue]);
+
+  return (
+    <div ref={ref} className="text-3xl font-bold text-white tabular-nums">
+      {isInView ? `${count}${stat.suffix}` : "0"}
+    </div>
+  );
+}
 
 export function WhySection() {
   return (
@@ -48,7 +93,7 @@ export function WhySection() {
             </div>
           </motion.div>
 
-          {/* Right — Data */}
+          {/* Right — Animated Counters */}
           <motion.div
             className="lg:col-span-5"
             initial={{ opacity: 0, y: 30 }}
@@ -64,7 +109,7 @@ export function WhySection() {
                     i < stats.length - 1 ? "border-b border-[rgba(255,255,255,0.06)]" : ""
                   }`}
                 >
-                  <div className="text-3xl font-bold text-white">{stat.value}</div>
+                  <AnimatedCounter stat={stat} />
                   <div className="text-sm text-[#71717A] mt-1">{stat.label}</div>
                 </div>
               ))}
