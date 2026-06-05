@@ -1,20 +1,22 @@
 "use client";
 
-import { Suspense, lazy } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FlickeringGrid } from "@/components/ui/FlickeringGrid";
 import { WordFadeIn } from "@/components/ui/WordFadeIn";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
-// Lazy-load 3D shield (heavy — only on desktop)
-const HeroShield = lazy(() =>
-  import("@/components/three/HeroShield").then((mod) => ({
-    default: mod.HeroShield,
-  }))
+// Dynamic import with SSR disabled — renders immediately on client, no lazy/Suspense needed
+const HeroShield = dynamic(
+  () => import("@/components/three/HeroShield").then((mod) => mod.HeroShield),
+  {
+    ssr: false,
+    loading: () => <ShieldFallback />,
+  }
 );
 
-// SVG fallback for mobile / SSR
+// SVG fallback for mobile / SSR / loading
 function ShieldFallback() {
   return (
     <svg
@@ -41,46 +43,6 @@ function ShieldFallback() {
         className="shield-draw"
         style={{ animationDelay: "1s" }}
       />
-      <rect
-        x="125"
-        y="145"
-        width="50"
-        height="45"
-        rx="4"
-        stroke="#3B82F6"
-        strokeWidth="1.5"
-        fill="none"
-        className="shield-draw"
-        style={{ animationDelay: "1.5s" }}
-      />
-      <path
-        d="M135 145 L135 125 Q135 105 150 105 Q165 105 165 125 L165 145"
-        stroke="#3B82F6"
-        strokeWidth="1.5"
-        fill="none"
-        className="shield-draw"
-        style={{ animationDelay: "1.8s" }}
-      />
-      <circle
-        cx="150"
-        cy="163"
-        r="5"
-        stroke="#3B82F6"
-        strokeWidth="1.5"
-        fill="none"
-        className="shield-draw"
-        style={{ animationDelay: "2.1s" }}
-      />
-      <line
-        x1="150"
-        y1="168"
-        x2="150"
-        y2="178"
-        stroke="#3B82F6"
-        strokeWidth="1.5"
-        className="shield-draw"
-        style={{ animationDelay: "2.3s" }}
-      />
     </svg>
   );
 }
@@ -88,7 +50,8 @@ function ShieldFallback() {
 export function HeroSection() {
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      {/* Background grid — soft radial mask to prevent harsh square edges */}
+      <div className="absolute inset-0 z-0 [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,white_20%,transparent_100%)]">
         <FlickeringGrid color="#3B82F6" squareSize={4} gridGap={6} maxOpacity={0.15} />
       </div>
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 w-full relative z-10">
@@ -142,14 +105,12 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
+              transition={{ duration: 1.5, delay: 0.3 }}
               className="w-full"
             >
               {/* Desktop: 3D Shield */}
               <div className="hidden lg:block">
-                <Suspense fallback={<ShieldFallback />}>
-                  <HeroShield />
-                </Suspense>
+                <HeroShield />
               </div>
               {/* Mobile: SVG Shield */}
               <div className="lg:hidden flex justify-center">
