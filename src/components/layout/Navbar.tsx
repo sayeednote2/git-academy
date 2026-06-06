@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { navLinks } from "@/lib/data";
@@ -35,9 +36,18 @@ export function Navbar() {
     >
       <nav className="max-w-[1200px] mx-auto px-6 lg:px-12 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-baseline gap-0.5 shrink-0">
-          <span className="text-lg font-bold text-white">GIT</span>
-          <span className="text-lg font-light text-[#A1A1AA]">Academy</span>
+        <Link href="/" className="flex items-center gap-2 shrink-0 group">
+          <Image 
+            src="/git-logo-100px.png" 
+            alt="Git Academy Logo" 
+            width={28} 
+            height={28} 
+            className="object-contain group-hover:scale-110 transition-transform duration-300"
+          />
+          <div className="flex items-baseline gap-0.5">
+            <span className="text-lg font-bold text-white">GIT</span>
+            <span className="text-lg font-light text-[#A1A1AA]">Academy</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

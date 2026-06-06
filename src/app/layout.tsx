@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     default: "GIT Academy — Cybersecurity Training & Certifications",
     template: "%s | GIT Academy",
   },
+  icons: {
+    icon: "/git-logo-100px.png",
+    shortcut: "/git-logo-100px.png",
+    apple: "/git-logo-100px.png",
+  },
   description:
     "India's premier cybersecurity command center. Authorized training for Cisco, EC-Council, CompTIA, Microsoft, AWS. Hands-on labs, expert instructors, career transformation. Since 2002.",
   keywords: [
