@@ -15,7 +15,7 @@ export function BorderBeam({
   className,
   size = 200,
   duration = 15,
-  colorFrom = "#3B82F6", // Blue
+  colorFrom = "#ff1a1a", // Blue
   colorTo = "#A1A1AA", // Zinc
 }: BorderBeamProps) {
   return (

@@ -12,9 +12,9 @@
   --color-text-tertiary: #71717A;
   --color-text-ghost: #52525B;
 
-  --color-accent: #3B82F6;
-  --color-accent-hover: #60A5FA;
-  --color-accent-muted: #1D4ED8;
+  --color-accent: #ff1a1a;
+  --color-accent-hover: #ff3333;
+  --color-accent-muted: #cc0000;
 
   --color-success: #22C55E;
   --color-warning: #EAB308;
@@ -22,7 +22,7 @@
 
   --color-border: rgba(255, 255, 255, 0.06);
   --color-border-hover: rgba(255, 255, 255, 0.12);
-  --color-border-active: rgba(59, 130, 246, 0.4);
+  --color-border-active: rgba(255, 26, 26, 0.4);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -40,7 +40,7 @@
 *::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.15); }
 
 ::selection {
-  background: rgba(59, 130, 246, 0.25);
+  background: rgba(255, 26, 26, 0.25);
   color: #FAFAFA;
 }
 
@@ -60,7 +60,7 @@ body {
 
 /* ── Focus ────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline: 2px solid rgba(255, 26, 26, 0.5);
   outline-offset: 2px;
   border-radius: 4px;
 }

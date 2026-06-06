@@ -16,7 +16,7 @@ export function FlickeringGrid({
   className,
   squareSize = 4,
   gridGap = 6,
-  color = "#3B82F6",
+  color = "#ff1a1a",
   maxOpacity = 0.3,
   flickerChance = 0.3,
 }: FlickeringGridProps) {

@@ -9,7 +9,7 @@ const filterVendors = ["All", "Cisco", "EC-Council", "CompTIA", "Microsoft", "AW
 
 const levelStyles: Record<CourseLevel, string> = {
   Beginner: "bg-[rgba(34,197,94,0.1)] text-[#22C55E]",
-  Intermediate: "bg-[rgba(59,130,246,0.1)] text-[#3B82F6]",
+  Intermediate: "bg-[rgba(59,130,246,0.1)] text-[#ff1a1a]",
   Advanced: "bg-[rgba(234,179,8,0.1)] text-[#EAB308]",
   Expert: "bg-[rgba(239,68,68,0.1)] text-[#EF4444]",
 };
@@ -46,7 +46,7 @@ export default function TrainingPage() {
               onClick={() => setActive(vendor)}
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${
                 active === vendor
-                  ? "bg-[#3B82F6] text-white"
+                  ? "bg-[#ff1a1a] text-white"
                   : "bg-[#18181B] text-[#A1A1AA] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.12)] hover:text-white"
               }`}
             >

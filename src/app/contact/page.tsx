@@ -39,14 +39,14 @@ export default function ContactPage() {
                     placeholder="Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#3B82F6] focus:outline-none transition-colors"
+                    className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#ff1a1a] focus:outline-none transition-colors"
                   />
                   <input
                     type="email"
                     placeholder="Email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#3B82F6] focus:outline-none transition-colors"
+                    className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#ff1a1a] focus:outline-none transition-colors"
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -55,20 +55,20 @@ export default function ContactPage() {
                     placeholder="Phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#3B82F6] focus:outline-none transition-colors"
+                    className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#ff1a1a] focus:outline-none transition-colors"
                   />
                   <input
                     type="text"
                     placeholder="Company (optional)"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#3B82F6] focus:outline-none transition-colors"
+                    className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#ff1a1a] focus:outline-none transition-colors"
                   />
                 </div>
                 <select
                   value={formData.inquiry}
                   onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
-                  className="w-full bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm focus:border-[#3B82F6] focus:outline-none transition-colors appearance-none"
+                  className="w-full bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm focus:border-[#ff1a1a] focus:outline-none transition-colors appearance-none"
                 >
                   <option value="" className="text-[#52525B]">Inquiry type</option>
                   <option value="individual">Individual Training</option>
@@ -82,11 +82,11 @@ export default function ContactPage() {
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#3B82F6] focus:outline-none transition-colors resize-none"
+                  className="w-full bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#ff1a1a] focus:outline-none transition-colors resize-none"
                 />
                 <button
                   type="submit"
-                  className="w-full bg-[#3B82F6] text-white rounded-lg px-6 py-3 text-sm font-medium hover:bg-[#60A5FA] transition-colors duration-200"
+                  className="w-full bg-[#ff1a1a] text-white rounded-lg px-6 py-3 text-sm font-medium hover:bg-[#ff3333] transition-colors duration-200"
                 >
                   Send Message
                 </button>

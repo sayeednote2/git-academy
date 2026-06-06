@@ -68,8 +68,8 @@ export function CareerOutcomes() {
                 transition={{ duration: 0.4, delay: i * 0.15 + 0.3, ease: [0.16, 1, 0.3, 1] }}
                 className="flex justify-center"
               >
-                <div className="flex items-center gap-2 text-[#3B82F6]">
-                  <div className="hidden md:block w-8 h-px bg-[#3B82F6]" />
+                <div className="flex items-center gap-2 text-[#ff1a1a]">
+                  <div className="hidden md:block w-8 h-px bg-[#ff1a1a]" />
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </motion.div>
@@ -80,9 +80,9 @@ export function CareerOutcomes() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: i * 0.15 + 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-[#18181B] rounded-xl p-6 border border-[rgba(255,255,255,0.06)] border-l-2 border-l-[#3B82F6]"
+                className="bg-[#18181B] rounded-xl p-6 border border-[rgba(255,255,255,0.06)] border-l-2 border-l-[#ff1a1a]"
               >
-                <div className="text-sm text-[#3B82F6] mb-1">After</div>
+                <div className="text-sm text-[#ff1a1a] mb-1">After</div>
                 <div className="text-lg font-semibold text-white">
                   {outcome.name}
                 </div>
@@ -96,7 +96,7 @@ export function CareerOutcomes() {
                   {outcome.after.certs.map((cert) => (
                     <span
                       key={cert}
-                      className="text-xs px-2 py-0.5 rounded-md bg-[rgba(59,130,246,0.1)] text-[#3B82F6] font-medium"
+                      className="text-xs px-2 py-0.5 rounded-md bg-[rgba(59,130,246,0.1)] text-[#ff1a1a] font-medium"
                     >
                       {cert}
                     </span>

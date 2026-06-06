@@ -66,7 +66,7 @@ export default function BlogPage() {
               onClick={() => setActive(cat)}
               className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
                 active === cat
-                  ? "bg-[#3B82F6] text-white"
+                  ? "bg-[#ff1a1a] text-white"
                   : "text-[#A1A1AA] hover:text-white"
               }`}
             >
@@ -86,10 +86,10 @@ export default function BlogPage() {
               transition={{ duration: 0.4, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
               className="bg-[#18181B] rounded-xl border border-[rgba(255,255,255,0.06)] p-6 hover:border-[rgba(255,255,255,0.12)] transition-colors duration-200 group cursor-pointer"
             >
-              <span className="text-xs px-2 py-0.5 rounded-md bg-[rgba(59,130,246,0.1)] text-[#3B82F6] font-medium">
+              <span className="text-xs px-2 py-0.5 rounded-md bg-[rgba(59,130,246,0.1)] text-[#ff1a1a] font-medium">
                 {post.category}
               </span>
-              <h2 className="text-lg font-semibold text-white mt-3 leading-snug group-hover:text-[#60A5FA] transition-colors duration-200">
+              <h2 className="text-lg font-semibold text-white mt-3 leading-snug group-hover:text-[#ff3333] transition-colors duration-200">
                 {post.title}
               </h2>
               <p className="text-sm text-[#A1A1AA] mt-2 leading-relaxed line-clamp-3">

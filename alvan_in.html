@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIT Academy | Enterprise Networking & Cybersecurity Training</title>
+  <meta name="description" content="GIT Academy is a premier IT training institute since 2002. Get certified in Cisco Networking (CCNA, CCNP), EC-Council Cyber Security (CEH), Cloud Computing (AWS, Azure), and CompTIA.">
+  <meta name="keywords" content="GIT Academy, Cisco jobs, CCNA Training, CCNP, Cybersecurity course, CEH certification, Lab rentals, Cloud training, IT Certification">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gitinfo.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GIT Academy | Enterprise Networking & Cybersecurity Training">
+  <meta property="og:description" content="Hands-on training, industry certifications, and 24/7 remote lab access for high-demand IT careers.">
+  <link rel="icon" href="https://gitinfo.com/wp-content/uploads/2021/02/favicon-withbg.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-shield">
+      <svg viewBox="0 0 120 140" width="80" height="93">
+        <defs>
+          <linearGradient id="preloaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ff1a1a"/>
+            <stop offset="100%" stop-color="#cc0000"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 10 L110 35 L110 80 Q110 120 60 135 Q10 120 10 80 L10 35 Z"
+              fill="none" stroke="url(#preloaderGrad)" stroke-width="3"
+              stroke-dasharray="400" stroke-dashoffset="400"
+              class="preloader-shield-path"/>
+      </svg>
+    </div>
+    <div class="preloader-text">GIT ACADEMY</div>
+  </div>
+
+  <!-- BACKGROUND LAYERS -->
+  <div class="bg-glowing-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="cyber-grid"></div>
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- MOUSE GLOW -->
+  <div class="mouse-follower" id="mouseGlow"></div>
+
+  <!-- NAVIGATION -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo" id="logoLink">
+        <div class="nav-logo-shield">
+          <svg viewBox="0 0 120 140" width="36" height="42">
+            <defs>
+              <linearGradient id="navShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff3333"/>
+                <stop offset="100%" stop-color="#cc0000"/>
+              </linearGradient>
+            </defs>
+            <path d="M60 8 L112 34 L112 82 Q112 122 60 138 Q8 122 8 82 L8 34 Z"
+                  fill="none" stroke="url(#navShieldGrad)" stroke-width="6"/>
+            <path d="M60 25 L95 42 L95 75 Q95 105 60 118 Q25 105 25 75 L25 42 Z"
+                  fill="rgba(204,0,0,0.1)" stroke="rgba(255,50,50,0.3)" stroke-width="1"/>
+            <path d="M45 78 L55 88 L78 58" fill="none" stroke="#ff3333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="nav-logo-text">GIT <span>ACADEMY</span></span>
+      </a>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active" id="homeLink">Home</a></li>
+          <li class="nav-dropdown" id="coursesDropdown">
+            <a href="#courses" class="nav-link" id="coursesLink">Courses <i class="fa fa-chevron-down" style="font-size:0.7rem;margin-left:0.2rem;"></i></a>
+            <ul class="nav-dropdown-menu">
+              <li class="nav-dropdown-item"><a href="#courses" data-filter="networking"><i class="fa fa-network-wired"></i> Cisco Networking</a></li>
+              <li class="nav-dropdown-item"><a href="#courses" data-filter="cybersecurity"><i class="fa fa-shield-halved"></i> Cyber Security</a></li>
+              <li class="nav-dropdown-item"><a href="#courses" data-filter="cloud"><i class="fa fa-cloud"></i> Microsoft & Cloud</a></li>
+              <li class="nav-dropdown-item"><a href="#courses" data-filter="master"><i class="fa fa-graduation-cap"></i> Master Programs</a></li>
+            </ul>
+          </li>
+          <li><a href="#labs" class="nav-link" id="labsLink">Lab Rentals</a></li>
+          <li><a href="#bootcamps" class="nav-link" id="bootcampsLink">Bootcamps</a></li>
+          <li><a href="#about" class="nav-link" id="aboutLink">About</a></li>
+          <li><a href="#contact" class="nav-link" id="contactLink">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-search-btn" id="openSearch" aria-label="Open Search"><i class="fa fa-magnifying-glass"></i></button>
+        <a href="#contact" class="btn-primary" id="headerCta" style="padding:0.55rem 1.3rem;font-size:0.85rem;">Start Learning</a>
+        <button class="burger-menu" id="mobileMenuToggle" aria-label="Toggle Menu">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="searchOverlay">
+    <button class="search-overlay-close" id="closeSearch" aria-label="Close Search"><i class="fa fa-xmark"></i></button>
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search courses, certifications, labs..." autocomplete="off">
+      </div>
+      <p style="color:var(--color-text-muted);font-size:0.85rem;">Press <kbd style="background:rgba(255,255,255,0.08);padding:0.2rem 0.5rem;border-radius:4px;">ESC</kbd> to close</p>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-pre" id="heroPre">
+          <span class="pulse-dot"></span> Empowering IT Careers Since 2002
+        </div>
+        <h1 class="hero-title" id="heroTitle">
+          Accelerate Your <br>
+          <span class="text-gradient" id="typedTarget">IT Certifications</span><span class="typed-cursor"></span><br>
+          with Real-World Labs
+        </h1>
+        <p class="hero-desc" id="heroDesc">
+          GIT Academy provides industry-leading hands-on bootcamps and enterprise certifications in Advanced Cisco Systems, Cyber Security, Cloud Infrastructures, and specialized Lab Rentals.
+        </p>
+        <div class="hero-ctas" id="heroCtas">
+          <a href="#courses" class="btn-primary" id="exploreBtn">Explore Courses <i class="fa fa-arrow-right"></i></a>
+          <a href="#contact" class="btn-secondary" id="demoBtn">Book a Lab Demo <i class="fa fa-cubes"></i></a>
+        </div>
+        <div class="hero-features" id="heroFeatures">
+          <div class="hero-feat-item">
+            <i class="fa fa-circle-check"></i>
+            <div class="hero-feat-text"><h4>Active Labs</h4><p>Dedicated remote sandboxes</p></div>
+          </div>
+          <div class="hero-feat-item">
+            <i class="fa fa-circle-check"></i>
+            <div class="hero-feat-text"><h4>Expert Instructors</h4><p>Certified lead consultants</p></div>
+          </div>
+          <div class="hero-feat-item">
+            <i class="fa fa-circle-check"></i>
+            <div class="hero-feat-text"><h4>100% Placements</h4><p>Tailored job-oriented guidance</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D ANIMATED LOGO SECTION -->
+      <div class="hero-logo-container" id="heroVisual">
+        <canvas id="logoCanvas3d"></canvas>
+        <div class="hero-logo-glow"></div>
+        <div class="hero-logo-rings">
+          <div class="logo-ring ring-1"></div>
+          <div class="logo-ring ring-2"></div>
+          <div class="logo-ring ring-3"></div>
+        </div>
+        <div class="hero-logo-particles" id="logoParticles"></div>
+      </div>
+    </div>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-indicator-mouse"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section" id="stats">
+    <div class="container glass-card stats-grid" id="statsGrid">
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa fa-award"></i></div>
+        <div class="stat-val" data-val="20">0</div>
+        <div class="stat-lbl">Years Excellence</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa fa-book-open"></i></div>
+        <div class="stat-val" data-val="50">0</div>
+        <div class="stat-lbl">Global Courses</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa fa-users"></i></div>
+        <div class="stat-val" data-val="10000">0</div>
+        <div class="stat-lbl">Alumni Trained</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa fa-server"></i></div>
+        <div class="stat-val" data-val="100">0</div>
+        <div class="stat-lbl">% Hands-on Labs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION DIVIDER -->
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- PATHWAYS -->
+  <section class="section-space" id="pathways">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-pre">Career Roadmaps</span>
+        <h2 class="section-title">High-Demand Career Pathways</h2>
+        <p class="section-desc">Acquire critical certifications mapped directly to hot industry jobs, supported by real-world enterprise infrastructure.</p>
+      </div>
+      <div class="pathway-grid" id="pathwayCards">
+        <div class="glass-card pathway-card reveal-up" data-tilt>
+          <div class="card-spotlight"></div>
+          <div class="pathway-icon-wrapper p-icon-red"><i class="fa fa-network-wired"></i></div>
+          <h3>Cisco Networking</h3>
+          <p>Master enterprise routers, dynamic switches, SD-WAN orchestration, and collaboration architectures.</p>
+          <ul class="pathway-jobs">
+            <li><i class="fa fa-chevron-right"></i> Network Administrator</li>
+            <li><i class="fa fa-chevron-right"></i> Cisco Solutions Architect</li>
+            <li><i class="fa fa-chevron-right"></i> Infrastructure Engineer</li>
+          </ul>
+          <a href="#courses" class="pathway-link" data-filter="networking">View Path Courses <i class="fa fa-arrow-right-long"></i></a>
+        </div>
+        <div class="glass-card pathway-card reveal-up" data-tilt style="transition-delay:0.1s">
+          <div class="card-spotlight"></div>
+          <div class="pathway-icon-wrapper p-icon-crimson"><i class="fa fa-shield-halved"></i></div>
+          <h3>Cyber Security</h3>
+          <p>Gain core offensive and defensive expertise. Learn network security architectures and threat forensics.</p>
+          <ul class="pathway-jobs">
+            <li><i class="fa fa-chevron-right"></i> Ethical Hacker (CEH)</li>
+            <li><i class="fa fa-chevron-right"></i> SOC Security Analyst</li>
+            <li><i class="fa fa-chevron-right"></i> Forensic Investigator (CHFI)</li>
+          </ul>
+          <a href="#courses" class="pathway-link" data-filter="cybersecurity">View Path Courses <i class="fa fa-arrow-right-long"></i></a>
+        </div>
+        <div class="glass-card pathway-card reveal-up" data-tilt style="transition-delay:0.2s">
+          <div class="card-spotlight"></div>
+          <div class="pathway-icon-wrapper p-icon-dark"><i class="fa fa-cloud"></i></div>
+          <h3>Microsoft & Cloud</h3>
+          <p>Deploy secure virtual servers, design server pipelines, and manage hybrid cloud enterprise databases.</p>
+          <ul class="pathway-jobs">
+            <li><i class="fa fa-chevron-right"></i> Azure Administrator</li>
+            <li><i class="fa fa-chevron-right"></i> Cloud Security Engineer</li>
+            <li><i class="fa fa-chevron-right"></i> Systems Architect</li>
+          </ul>
+          <a href="#courses" class="pathway-link" data-filter="cloud">View Path Courses <i class="fa fa-arrow-right-long"></i></a>
+        </div>
+        <div class="glass-card pathway-card reveal-up" data-tilt style="transition-delay:0.3s">
+          <div class="card-spotlight"></div>
+          <div class="pathway-icon-wrapper p-icon-ember"><i class="fa fa-cubes-stacked"></i></div>
+          <h3>CompTIA Foundation</h3>
+          <p>Build the fundamental operational layers of system support, network routing, and server management.</p>
+          <ul class="pathway-jobs">
+            <li><i class="fa fa-chevron-right"></i> Technical Support Specialist</li>
+            <li><i class="fa fa-chevron-right"></i> Helpdesk Administrator</li>
+            <li><i class="fa fa-chevron-right"></i> Junior Systems Engineer</li>
+          </ul>
+          <a href="#courses" class="pathway-link" data-filter="comptia">View Path Courses <i class="fa fa-arrow-right-long"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- COURSES -->
+  <section class="section-space" id="courses" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-pre">Certifications Guide</span>
+        <h2 class="section-title">Popular Training Courses</h2>
+        <p class="section-desc">Review our catalog of live certification bootcamps, each including dedicated sandbox access and instructor mentorship.</p>
+      </div>
+      <div class="course-filters reveal-up" id="courseFilters">
+        <button class="filter-btn active" data-filter="all">All Courses</button>
+        <button class="filter-btn" data-filter="networking">Cisco Networking</button>
+        <button class="filter-btn" data-filter="cybersecurity">Cyber Security</button>
+        <button class="filter-btn" data-filter="cloud">Microsoft & Cloud</button>
+        <button class="filter-btn" data-filter="comptia">CompTIA</button>
+        <button class="filter-btn" data-filter="master">Master Programs</button>
+      </div>
+      <div class="courses-grid" id="coursesGrid">
+        <div class="glass-card course-card reveal-up" data-category="networking" data-tilt>
+          <div class="card-spotlight"></div>
+          <div class="course-img-placeholder"><i class="fa fa-ethernet"></i><div class="course-badges"><span class="badge badge-red">Cisco CCNA</span></div></div>
+          <div class="course-card-content">
+            <h3 class="course-title">Implementing & Administering Cisco Solutions</h3>
+            <p class="course-desc">Master the core layers of modern enterprise networks. Gain practical routing, switching, wireless connections, and basic automation skills.</p>
+            <div class="course-meta"><span><i class="fa fa-clock"></i> 6 Weeks</span><span><i class="fa fa-terminal"></i> Dedicated Labs</span></div>
+            <div class="course-footer"><div class="course-price">Global Cert<span>Code: 200-301</span></div><button class="course-more-btn" onclick="scrollToContact()">Inquire <i class="fa fa-chevron-right"></i></button></div>
+          </div>
+        </div>
+        <div class="glass-card course-card reveal-up" data-category="cybersecurity" data-tilt style="transition-delay:0.1s">
+          <div class="card-spotlight"></div>
+          <div class="course-img-placeholder"><i class="fa fa-user-secret"></i><div class="course-badges"><span class="badge badge-crimson">CEHv12</span></div></div>
+          <div class="course-card-content">
+            <h3 class="course-title">Certified Ethical Hacker (CEH)</h3>
+            <p class="course-desc">Learn scanning, network footprints, vulnerability analysis, exploits, packet hacking, and advanced defense structures.</p>
+            <div class="course-meta"><span><i class="fa fa-clock"></i> 8 Weeks</span><span><i class="fa fa-server"></i> Sandbox Target</span></div>
+            <div class="course-footer"><div class="course-price">EC-Council<span>Exam V12</span></div><button class="course-more-btn" onclick="scrollToContact()">Inquire <i class="fa fa-chevron-right"></i></button></div>
+          </div>
+        </div>
+        <div class="glass-card course-card reveal-up" data-category="cloud" data-tilt style="transition-delay:0.2s">
+          <div class="card-spotlight"></div>
+          <div class="course-img-placeholder"><i class="fa fa-cloud-arrow-up"></i><div class="course-badges"><span class="badge badge-dark">Microsoft Azure</span></div></div>
+          <div class="course-card-content">
+            <h3 class="course-title">AZ-104: Microsoft Azure Administrator</h3>
+            <p class="course-desc">Deploy secure virtual server clouds, configure advanced file clusters, scale system networks, and control administrative credentials.</p>
+            <div class="course-meta"><span><i class="fa fa-clock"></i> 5 Weeks</span><span><i class="fa fa-cloud"></i> Azure Sandbox</span></div>
+            <div class="course-footer"><div class="course-price">Microsoft<span>Code: AZ-104</span></div><button class="course-more-btn" onclick="scrollToContact()">Inquire <i class="fa fa-chevron-right"></i></button></div>
+          </div>
+        </div>
+        <div class="glass-card course-card reveal-up" data-category="comptia" data-tilt>
+          <div class="card-spotlight"></div>
+          <div class="course-img-placeholder"><i class="fa fa-lock"></i><div class="course-badges"><span class="badge badge-red">Security+</span></div></div>
+          <div class="course-card-content">
+            <h3 class="course-title">CompTIA Security+ Certification</h3>
+            <p class="course-desc">Establish baseline security concepts, deploy secure wireless nodes, identify system threats, and execute incident response plans.</p>
+            <div class="course-meta"><span><i class="fa fa-clock"></i> 4 Weeks</span><span><i class="fa fa-fingerprint"></i> Threat Labs</span></div>
+            <div class="course-footer"><div class="course-price">CompTIA<span>Exam SY0-701</span></div><button class="course-more-btn" onclick="scrollToContact()">Inquire <i class="fa fa-chevron-right"></i></button></div>
+          </div>
+        </div>
+        <div class="glass-card course-card reveal-up" data-category="master" data-tilt style="transition-delay:0.1s">
+          <div class="card-spotlight"></div>
+          <div class="course-img-placeholder"><i class="fa fa-graduation-cap"></i><div class="course-badges"><span class="badge badge-crimson">Master CSMP</span></div></div>
+          <div class="course-card-content">
+            <h3 class="course-title">Cyber Security Master Program</h3>
+            <p class="course-desc">Our flagship intensive roadmap: Networking+, Security+, CCNA, CEHv12, Bug Bounty, SOC Analysis, and Penetration Testing combined.</p>
+            <div class="course-meta"><span><i class="fa fa-clock"></i> 6 Months</span><span><i class="fa fa-network-wired"></i> Full Sandbox</span></div>
+            <div class="course-footer"><div class="course-price">Master Cert<span>9 Certifications Pack</span></div><button class="course-more-btn" onclick="scrollToContact()">Inquire <i class="fa fa-chevron-right"></i></button></div>
+          </div>
+        </div>
+        <div class="glass-card course-card reveal-up" data-category="networking" data-tilt style="transition-delay:0.2s">
+          <div class="card-spotlight"></div>
+          <div class="course-img-placeholder"><i class="fa fa-diagram-project"></i><div class="course-badges"><span class="badge badge-red">CCNP Encor</span></div></div>
+          <div class="course-card-content">
+            <h3 class="course-title">Enterprise Network Core Technologies</h3>
+            <p class="course-desc">Advanced enterprise network architectures. Configure routing loops, scale switching nodes, manage SD-WAN, and secure virtual gateways.</p>
+            <div class="course-meta"><span><i class="fa fa-clock"></i> 8 Weeks</span><span><i class="fa fa-server"></i> Rack Labs</span></div>
+            <div class="course-footer"><div class="course-price">Global Cert<span>Code: 350-401</span></div><button class="course-more-btn" onclick="scrollToContact()">Inquire <i class="fa fa-chevron-right"></i></button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- LABS -->
+  <section class="section-space" id="labs">
+    <div class="container showcase-grid">
+      <div class="glass-card showcase-visual reveal-left" id="labsVisual">
+        <div class="lab-schematic">
+          <div class="wireframe-box"><div class="wireframe-orb"></div><div class="wireframe-lines"></div></div>
+        </div>
+      </div>
+      <div class="showcase-content reveal-right" id="labsContent">
+        <span class="section-pre">Virtual Infrastructure</span>
+        <h3>24/7 Dedicated Remote Labs</h3>
+        <p>We rent dedicated physical sandbox configurations to students, universities, and enterprise teams globally. Access real hardware remotely without virtual restrictions.</p>
+        <ul class="feature-check-list">
+          <li><i class="fa fa-circle-check"></i><div><h4>Real Hardware Racks</h4><p>Cisco catalyst switches, security firewalls, and data storage arrays.</p></div></li>
+          <li><i class="fa fa-circle-check"></i><div><h4>No Shared Resource Bottlenecks</h4><p>Exclusive access keys to your assigned network configuration.</p></div></li>
+          <li><i class="fa fa-circle-check"></i><div><h4>Global Low Latency Connections</h4><p>Connect from anywhere via high-speed, secure tunnels.</p></div></li>
+        </ul>
+        <a href="#contact" class="btn-primary">Reserve Lab Setup <i class="fa fa-cubes"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- BOOTCAMPS -->
+  <section class="section-space" id="bootcamps" style="background:var(--bg-secondary);">
+    <div class="container showcase-grid">
+      <div class="showcase-content reveal-left" id="bootcampsContent">
+        <span class="section-pre">Intensive Bootcamps</span>
+        <h3>Direct Professional Immersion</h3>
+        <p>Accelerate your career track with our intensive structured bootcamps. Perfect for engineering students and network administrators preparing for crucial certification exams.</p>
+        <ul class="feature-check-list">
+          <li><i class="fa fa-circle-check"></i><div><h4>Authorized Course Syllabus</h4><p>Curriculums aligned with CISCO, EC-Council, and CompTIA standards.</p></div></li>
+          <li><i class="fa fa-circle-check"></i><div><h4>Full Mock Exam Drills</h4><p>Real exam questions and timed simulation assessments.</p></div></li>
+          <li><i class="fa fa-circle-check"></i><div><h4>Job Placement Support</h4><p>Direct access to our partner recruiting channels.</p></div></li>
+        </ul>
+        <a href="#contact" class="btn-secondary">Request Syllabus <i class="fa fa-file-pdf"></i></a>
+      </div>
+      <div class="glass-card showcase-visual reveal-right" id="bootcampsVisual" style="background:radial-gradient(circle at center,rgba(204,0,0,0.08) 0%,transparent 80%);">
+        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="animation:orbOrbit 10s infinite linear;filter:drop-shadow(0 0 15px rgba(204,0,0,0.4));">
+          <circle cx="110" cy="110" r="80" stroke="#cc0000" stroke-width="2" stroke-dasharray="10 5"/>
+          <circle cx="110" cy="110" r="50" stroke="#ff3333" stroke-width="2" stroke-dasharray="6 4"/>
+          <circle cx="110" cy="110" r="25" stroke="#ff6666" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="110" y1="10" x2="110" y2="210" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+          <line x1="10" y1="110" x2="210" y2="110" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+          <!-- Shield icon in center -->
+          <path d="M110,92 L110,92 L122,98 L122,108 Q122,118 110,123 Q98,118 98,108 L98,98 Z" fill="none" stroke="#ff3333" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- ABOUT -->
+  <section class="section-space" id="about">
+    <div class="container" style="text-align:center;max-width:800px;margin:0 auto;">
+      <span class="section-pre reveal-up">Our Heritage</span>
+      <h2 class="section-title reveal-up">Why Professionals Choose GIT Academy</h2>
+      <p class="reveal-up" style="font-size:1.15rem;margin-bottom:2.5rem;line-height:1.8;">
+        Founded in 2002, GIT Academy has served as a benchmark for technical certifications. Our focus remains 100% on hands-on practical networking and cybersecurity skills. We put students directly in front of enterprise routers, switches, and target boxes.
+      </p>
+      <div class="hero-features reveal-up" style="text-align:left;max-width:700px;margin:0 auto;">
+        <div class="hero-feat-item"><i class="fa fa-award"></i><div class="hero-feat-text"><h4>20+ Years Record</h4><p>Training IT experts since 2002</p></div></div>
+        <div class="hero-feat-item"><i class="fa fa-server"></i><div class="hero-feat-text"><h4>Real Hardware Only</h4><p>No software-only emulations</p></div></div>
+        <div class="hero-feat-item"><i class="fa fa-headset"></i><div class="hero-feat-text"><h4>Constant Mentor Help</h4><p>Live guidance inside lab tasks</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- CONTACT -->
+  <section class="section-space" id="contact" style="background:var(--bg-secondary);">
+    <div class="container contact-grid">
+      <div class="contact-info-panel reveal-left" id="contactInfo">
+        <span class="section-pre">Connect with Advisors</span>
+        <h2>Ready to Secure<br><span class="text-gradient">Your Career?</span></h2>
+        <p>Fill out our inquiry form. Our course counselors will contact you to schedule lab demonstrations and discuss flexible batch schedules.</p>
+        <div class="contact-methods">
+          <div class="contact-method-item">
+            <div class="contact-method-icon"><i class="fa fa-phone"></i></div>
+            <div class="contact-method-details"><h4>Call or WhatsApp</h4><p>+91 9972177745</p></div>
+          </div>
+          <div class="contact-method-item">
+            <div class="contact-method-icon"><i class="fa fa-envelope"></i></div>
+            <div class="contact-method-details"><h4>Email Inquiry</h4><p>info@gitinfo.com</p></div>
+          </div>
+          <div class="contact-method-item">
+            <div class="contact-method-icon"><i class="fa fa-location-dot"></i></div>
+            <div class="contact-method-details"><h4>Training Center</h4><p>GIT Academy, Bengaluru, India</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card contact-form-card reveal-right" id="contactFormWrapper">
+        <h3 class="form-title">Registration Inquiry</h3>
+        <div class="form-alert form-alert-success" id="formSuccessAlert"><i class="fa fa-circle-check"></i><div>Your inquiry has been submitted! A counselor will reach out within 24 hours.</div></div>
+        <form id="inquiryForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-group-row">
+            <div class="form-group"><input type="text" class="form-control" id="formName" placeholder=" " required><label class="form-label" for="formName">Full Name</label></div>
+            <div class="form-group"><input type="tel" class="form-control" id="formPhone" placeholder=" " required><label class="form-label" for="formPhone">Phone Number</label></div>
+          </div>
+          <div class="form-group"><input type="email" class="form-control" id="formEmail" placeholder=" " required><label class="form-label" for="formEmail">Email Address</label></div>
+          <div class="form-group">
+            <select class="form-control" id="formCourse" required>
+              <option value="" disabled selected></option>
+              <option value="ccna">Cisco CCNA</option>
+              <option value="ccnp">Cisco CCNP</option>
+              <option value="ceh">Certified Ethical Hacker (CEH)</option>
+              <option value="az104">Microsoft Azure (AZ-104)</option>
+              <option value="comptia">CompTIA Certifications</option>
+              <option value="csmp">Cyber Security Master Program</option>
+              <option value="lab">Hardware Lab Rentals</option>
+              <option value="other">Other Inquiry</option>
+            </select>
+            <label class="form-label" for="formCourse">Target Training Course</label>
+          </div>
+          <div class="form-group"><textarea class="form-control" id="formMessage" placeholder=" " required></textarea><label class="form-label" for="formMessage">Questions about schedules...</label></div>
+          <button type="submit" class="btn-primary form-submit-btn" id="submitBtn">Submit Inquiry <i class="fa fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom:1.5rem;">
+          <div class="nav-logo-shield" style="transform:scale(0.85);">
+            <svg viewBox="0 0 120 140" width="32" height="37">
+              <defs>
+                <linearGradient id="fShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff3333"/>
+                  <stop offset="100%" stop-color="#cc0000"/>
+                </linearGradient>
+              </defs>
+              <path d="M60 8 L112 34 L112 82 Q112 122 60 138 Q8 122 8 82 L8 34 Z"
+                    fill="none" stroke="url(#fShieldGrad)" stroke-width="6"/>
+              <path d="M45 78 L55 88 L78 58" fill="none" stroke="#ff3333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="nav-logo-text" style="font-size:1.2rem;">GIT <span>ACADEMY</span></span>
+        </a>
+        <p>Enterprise hands-on lab rentals, industry-leading bootcamps, and global technical certifications since 2002.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/gittraining" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-column"><h4>Sitemap</h4><ul class="footer-links"><li><a href="#home">Home Base</a></li><li><a href="#courses">Courses</a></li><li><a href="#labs">Labs</a></li><li><a href="#bootcamps">Bootcamps</a></li><li><a href="#about">About</a></li></ul></div>
+      <div class="footer-column"><h4>Help & Support</h4><ul class="footer-links"><li><a href="#contact">Contact</a></li><li><a href="#contact">Schedule Demo</a></li><li><a href="https://gitinfo.com/careers/">Careers</a></li><li><a href="https://gitinfo.com/gallery/">Gallery</a></li></ul></div>
+      <div class="footer-column"><h4>Authorized Partners</h4>
+        <div class="footer-partners">
+          <div class="partner-logo" title="Cisco"><img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" alt="Cisco"></div>
+          <div class="partner-logo" title="EC-Council"><img src="https://gitinfo.com/wp-content/uploads/2021/02/EC-Council_logoRED-png.png" alt="EC-Council"></div>
+          <div class="partner-logo" title="Azure"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure"></div>
+          <div class="partner-logo" title="CompTIA"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/CompTIA_logo.svg" alt="CompTIA"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 GIT Academy. All Rights Reserved. Bengaluru, India.</p>
+      <div class="footer-legal-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

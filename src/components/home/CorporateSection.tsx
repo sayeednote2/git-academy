@@ -23,7 +23,7 @@ export function CorporateSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="absolute inset-0 z-0">
-            <Particles quantity={80} staticity={30} color="#3B82F6" />
+            <Particles quantity={80} staticity={30} color="#ff1a1a" />
           </div>
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 relative z-10">
             {/* Left */}
@@ -40,7 +40,7 @@ export function CorporateSection() {
               </p>
               <Link
                 href="/corporate"
-                className="inline-flex mt-6 bg-[#3B82F6] text-white rounded-lg px-5 py-2.5 text-sm font-medium hover:bg-[#60A5FA] transition-colors duration-200"
+                className="inline-flex mt-6 bg-[#ff1a1a] text-white rounded-lg px-5 py-2.5 text-sm font-medium hover:bg-[#ff3333] transition-colors duration-200"
               >
                 Request a Briefing →
               </Link>
@@ -51,7 +51,7 @@ export function CorporateSection() {
               <ul className="space-y-4">
                 {features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] mt-2 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff1a1a] mt-2 shrink-0" />
                     <span className="text-[#A1A1AA] text-sm leading-relaxed">
                       {feature}
                     </span>

@@ -54,7 +54,7 @@ export function TrainerSection() {
               </div>
               <div className="text-sm text-[#A1A1AA] mt-1">{trainer.title}</div>
 
-              <div className="w-8 h-px bg-[#3B82F6] mt-4 mb-4" />
+              <div className="w-8 h-px bg-[#ff1a1a] mt-4 mb-4" />
 
               <div className="flex flex-col gap-1.5">
                 {trainer.certifications.map((cert) => (

@@ -10,7 +10,7 @@ import { AuroraBackground } from "@/components/ui/AuroraBackground";
 
 const levelStyles: Record<CourseLevel, string> = {
   Beginner: "bg-[rgba(34,197,94,0.1)] text-[#22C55E]",
-  Intermediate: "bg-[rgba(59,130,246,0.1)] text-[#3B82F6]",
+  Intermediate: "bg-[rgba(59,130,246,0.1)] text-[#ff1a1a]",
   Advanced: "bg-[rgba(234,179,8,0.1)] text-[#EAB308]",
   Expert: "bg-[rgba(239,68,68,0.1)] text-[#EF4444]",
 };
@@ -132,7 +132,7 @@ export function CertEcosystem() {
           <div className="w-[200px] flex-shrink-0 flex items-center justify-center">
             <Link
               href="/training"
-              className="text-[#3B82F6] hover:text-[#60A5FA] text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+              className="text-[#ff1a1a] hover:text-[#ff3333] text-sm font-medium transition-colors duration-200 whitespace-nowrap"
             >
               View all programs →
             </Link>

@@ -8,7 +8,7 @@ export function FinalCTA() {
   return (
     <section className="py-32 lg:py-40 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Particles quantity={150} staticity={40} color="#3B82F6" />
+        <Particles quantity={150} staticity={40} color="#ff1a1a" />
       </div>
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center relative z-10">
         <motion.div
@@ -31,7 +31,7 @@ export function FinalCTA() {
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link
               href="/training"
-              className="bg-[#3B82F6] text-white rounded-lg px-6 py-3 text-sm font-medium hover:bg-[#60A5FA] transition-colors duration-200"
+              className="bg-[#ff1a1a] text-white rounded-lg px-6 py-3 text-sm font-medium hover:bg-[#ff3333] transition-colors duration-200"
             >
               Start Your Mission
             </Link>

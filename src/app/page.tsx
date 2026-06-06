@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <main className="relative bg-[#09090B]">
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <Particles quantity={250} staticity={30} color="#3B82F6" />
+        <Particles quantity={250} staticity={30} color="#ff1a1a" />
       </div>
       <div className="relative z-10">
         <HeroSection />

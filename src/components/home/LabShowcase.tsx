@@ -44,7 +44,7 @@ export function LabShowcase() {
     if (line.startsWith("[+]") || line.startsWith("[ACTION]"))
       return "text-[#22C55E]";
     if (line.startsWith("[*]"))
-      return "text-[#3B82F6]";
+      return "text-[#ff1a1a]";
     if (line.startsWith("meterpreter") || line.startsWith("msf"))
       return "text-[#EF4444]";
     return "text-[#71717A]";
@@ -86,7 +86,7 @@ export function LabShowcase() {
         >
           {/* Terminal */}
           <div className="lg:col-span-8 relative rounded-xl lg:rounded-r-none p-[1px] overflow-hidden bg-[rgba(255,255,255,0.06)]">
-            <BorderBeam size={400} duration={12} colorFrom="#3B82F6" colorTo="transparent" />
+            <BorderBeam size={400} duration={12} colorFrom="#ff1a1a" colorTo="transparent" />
             <div className="bg-[#18181B] rounded-[11px] lg:rounded-r-none h-full w-full overflow-hidden relative z-10 flex flex-col">
               {/* Title bar */}
               <div className="h-10 bg-[#27272A] flex shrink-0 items-center justify-between px-4 border-b border-[rgba(255,255,255,0.06)]">
@@ -108,7 +108,7 @@ export function LabShowcase() {
                 </div>
               ))}
               {isTyping && (
-                <span className="text-[#3B82F6] terminal-cursor">█</span>
+                <span className="text-[#ff1a1a] terminal-cursor">█</span>
               )}
             </div>
           </div>
@@ -123,7 +123,7 @@ export function LabShowcase() {
                   onClick={() => setActiveIndex(i)}
                   className={`text-left py-3 px-4 rounded-lg text-sm transition-all duration-200 ${
                     i === activeIndex
-                      ? "text-white bg-[#27272A] border-l-2 border-[#3B82F6]"
+                      ? "text-white bg-[#27272A] border-l-2 border-[#ff1a1a]"
                       : "text-[#A1A1AA] hover:text-white hover:bg-[#18181B]"
                   }`}
                 >

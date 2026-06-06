@@ -104,7 +104,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <Link
           href="/contact"
-          className="hidden lg:inline-flex bg-[#3B82F6] text-white rounded-lg px-4 py-2 text-sm font-medium hover:bg-[#60A5FA] transition-colors duration-200"
+          className="hidden lg:inline-flex bg-[#ff1a1a] text-white rounded-lg px-4 py-2 text-sm font-medium hover:bg-[#ff3333] transition-colors duration-200"
         >
           Enroll Now
         </Link>
@@ -164,7 +164,7 @@ export function Navbar() {
             <div className="pt-4 mt-4 border-t border-[rgba(255,255,255,0.06)]">
               <Link
                 href="/contact"
-                className="inline-flex bg-[#3B82F6] text-white rounded-lg px-5 py-3 text-sm font-medium hover:bg-[#60A5FA] transition-colors w-full justify-center"
+                className="inline-flex bg-[#ff1a1a] text-white rounded-lg px-5 py-3 text-sm font-medium hover:bg-[#ff3333] transition-colors w-full justify-center"
                 onClick={() => setMobileOpen(false)}
               >
                 Enroll Now

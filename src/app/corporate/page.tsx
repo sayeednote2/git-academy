@@ -72,14 +72,14 @@ export default function CorporatePage() {
                 placeholder="Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#3B82F6] focus:outline-none transition-colors duration-200"
+                className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#ff1a1a] focus:outline-none transition-colors duration-200"
               />
               <input
                 type="email"
                 placeholder="Work email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#3B82F6] focus:outline-none transition-colors duration-200"
+                className="bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#ff1a1a] focus:outline-none transition-colors duration-200"
               />
             </div>
             <input
@@ -87,18 +87,18 @@ export default function CorporatePage() {
               placeholder="Company"
               value={formData.company}
               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              className="w-full bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#3B82F6] focus:outline-none transition-colors duration-200"
+              className="w-full bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#ff1a1a] focus:outline-none transition-colors duration-200"
             />
             <textarea
               placeholder="Tell us about your training needs"
               rows={4}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#3B82F6] focus:outline-none transition-colors duration-200 resize-none"
+              className="w-full bg-[#09090B] border border-[rgba(255,255,255,0.06)] text-white rounded-lg px-4 py-3 text-sm placeholder:text-[#52525B] focus:border-[#ff1a1a] focus:outline-none transition-colors duration-200 resize-none"
             />
             <button
               type="submit"
-              className="w-full bg-[#3B82F6] text-white rounded-lg px-6 py-3 text-sm font-medium hover:bg-[#60A5FA] transition-colors duration-200"
+              className="w-full bg-[#ff1a1a] text-white rounded-lg px-6 py-3 text-sm font-medium hover:bg-[#ff3333] transition-colors duration-200"
             >
               Submit Request
             </button>

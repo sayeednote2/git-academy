@@ -76,8 +76,8 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <div className="w-6 h-6 rounded-full border-2 border-[#3B82F6] bg-[#09090B] flex items-center justify-center shrink-0 z-10">
-                    <div className="w-2 h-2 rounded-full bg-[#3B82F6]" />
+                  <div className="w-6 h-6 rounded-full border-2 border-[#ff1a1a] bg-[#09090B] flex items-center justify-center shrink-0 z-10">
+                    <div className="w-2 h-2 rounded-full bg-[#ff1a1a]" />
                   </div>
                   <div className="pb-2">
                     <span className="text-sm font-bold text-white">{ms.year}</span>

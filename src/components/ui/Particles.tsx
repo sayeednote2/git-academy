@@ -155,6 +155,7 @@ export function Particles({
       circle.translateY += (mousePosition.current.y / (staticity / circle.magnetism) - circle.translateY) / ease;
 
       // circle gets out of the canvas
+      // circle gets out of the canvas
       if (
         circle.x < -circle.size ||
         circle.x > canvasSize.current.w + circle.size ||
@@ -170,6 +171,34 @@ export function Particles({
         drawCircle(circle, true);
       }
     });
+
+    // Draw connecting lines (plexus effect)
+    if (context.current) {
+      const rgb = hexToRgb(color).join(", ");
+      for (let i = 0; i < circles.current.length; i++) {
+        for (let j = i + 1; j < circles.current.length; j++) {
+          const dx = circles.current[i].x - circles.current[j].x;
+          
+          // Fast bounding box check to skip expensive Math.sqrt for 90% of particles
+          if (dx > 150 || dx < -150) continue;
+          
+          const dy = circles.current[i].y - circles.current[j].y;
+          if (dy > 150 || dy < -150) continue;
+          
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < 150) {
+            context.current.beginPath();
+            context.current.strokeStyle = `rgba(${rgb}, ${0.15 * (1 - dist / 150)})`;
+            context.current.lineWidth = 0.8;
+            context.current.moveTo(circles.current[i].x, circles.current[i].y);
+            context.current.lineTo(circles.current[j].x, circles.current[j].y);
+            context.current.stroke();
+          }
+        }
+      }
+    }
+
     window.requestAnimationFrame(animate);
   };
 
