@@ -265,7 +265,12 @@ export function HeroShield() {
           dpr={[1, 2]}
           frameloop="always"
         >
-          <OrbitControls enableZoom={false} enablePan={false} />
+          <OrbitControls 
+            enableZoom={false} 
+            enablePan={false} 
+            autoRotate 
+            autoRotateSpeed={2.5} 
+          />
           <AnimatedLights />
           <OrbitingParticles />
           <DataNodes />
